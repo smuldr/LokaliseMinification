@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My App</string>
+    <string name="bottom_tab_1">Bottom 1</string>
+    <string name="bottom_tab_2">Bottom 2</string>
+    <string name="bottom_tab_3">Bottom 3</string>
+    <string name="center_text">Center text.</string>
+    <string name="top_tab_1">Top 1</string>
+    <string name="top_tab_2">Top 2</string>
+    <string name="top_tab_3">Top 3</string>
+</resources>

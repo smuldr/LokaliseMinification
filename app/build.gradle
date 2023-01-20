@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.lokalise.minification'
+    compileSdk 33
+    defaultConfig {
+        applicationId 'com.example.lokalise.minification'
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName '1.0'
+        buildConfigField 'String', 'PROJECT_ID', "\"5886523163caba1869c3a6.87921940\""
+        buildConfigField 'String', 'SDK_TOKEN', "\"c40f1b410f7bc17a510bc2e9431028bbd13b\""
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix '.debug'
+        }
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                     'lokalise-rules-original.pro',
+                    'gson-rules.pro'
+        }
+        fixed {
+            applicationIdSuffix '.fixed'
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'lokalise-rules-fixed.pro',
+                    'gson-rules.pro'
+            applicationIdSuffix '.debug'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.0'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'com.lokalise.android:sdk:2.1.2-lite'
+}
