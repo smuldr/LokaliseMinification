@@ -20,8 +20,10 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix '.debug'
+            resValue 'string', 'app_name', 'My App (debug)'
         }
         release {
+            resValue 'string', 'app_name', 'My App (release)'
             signingConfig signingConfigs.debug
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
@@ -30,6 +32,7 @@ android {
         }
         fixed {
             applicationIdSuffix '.fixed'
+            resValue 'string', 'app_name', 'My App (fixed)'
             signingConfig signingConfigs.debug
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
