@@ -35,7 +35,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
                     'lokalise-rules-fixed.pro',
                     'gson-rules.pro'
-            applicationIdSuffix '.debug'
         }
     }
     compileOptions {
